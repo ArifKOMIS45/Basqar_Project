@@ -19,17 +19,17 @@ public class Hooks {
     @Before
     public void before(Scenario scenario)
     {
-        System.out.println("Senaryo başladı");
-        System.out.println("scenario id si="+ scenario.getId());
-        System.out.println("scenario name="+ scenario.getName());
+        System.out.println("Scenario has started");
+        System.out.println("Scenario id="+ scenario.getId());
+        System.out.println("Scenario name="+ scenario.getName());
     }
 
     @After
     public void after(Scenario scenario)
     {
-        System.out.println("Senaryo Bitti");
-        System.out.println("scenario sonucu="+ scenario.getStatus());
-        System.out.println("scenario isFailed ?="+ scenario.isFailed());
+        System.out.println("Scenario has finished");
+        System.out.println("Scenario result="+ scenario.getStatus());
+        System.out.println("Scenario isFailed ?="+ scenario.isFailed());
 
         if (scenario.isFailed()) {
 
