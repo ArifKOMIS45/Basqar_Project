@@ -8,6 +8,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import utilities.BaseDriver;
+import utilities.ExcelUtility;
 
 import java.io.File;
 import java.io.IOException;
@@ -31,10 +32,9 @@ public class Hooks {
         System.out.println("Scenario result="+ scenario.getStatus());
         System.out.println("Scenario isFailed ?="+ scenario.isFailed());
 
+        LocalDateTime date = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yy");
         if (scenario.isFailed()) {
-
-            LocalDateTime date = LocalDateTime.now();
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yy");
 
             TakesScreenshot screenshot = (TakesScreenshot) BaseDriver.getDriver();
             File ekranDosyasi = screenshot.getScreenshotAs(OutputType.FILE);
@@ -47,6 +47,7 @@ public class Hooks {
                 e.printStackTrace();
             }
         }
+        ExcelUtility.writeExcel("src/test/java/ApachePOI/resources/ScenarioStatus.xlsx",scenario,BaseDriver.threadBrowserName.get(),date.format(formatter));
         BaseDriver.DriverQuit();
     }
 }
