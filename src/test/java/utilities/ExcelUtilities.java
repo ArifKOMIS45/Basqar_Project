@@ -9,7 +9,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExcelUtility {
+public class ExcelUtilities {
 
     public static List<List<String>> getListData(String path, String sheetName, int columnCount) {
         List<List<String>> returnList = new ArrayList<>();
