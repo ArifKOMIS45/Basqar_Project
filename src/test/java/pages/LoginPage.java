@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.BaseDriver;
 
-public class LoginPage extends Pages.Parent {
+public class LoginPage extends Parent {
 
     public LoginPage() {
         PageFactory.initElements(BaseDriver.getDriver(),this);

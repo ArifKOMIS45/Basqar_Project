@@ -15,13 +15,16 @@ public class LoginSteps {
 
     @Given("^Navigate to basqar$")
     public void navigateToBasqar() {
+
     }
 
     @When("^Enter username and password and click login button$")
     public void enterUsernameAndPasswordAndClickLoginButton() {
+
     }
 
     @Then("^User should login successfully$")
     public void userShouldLoginSuccessfully() {
+
     }
 }
