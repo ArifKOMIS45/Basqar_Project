@@ -20,6 +20,12 @@ public class LoginPage extends Parent {
     @FindBy(css = "button[aria-label='LOGIN']")
     private WebElement loginButton;
 
+    @FindBy(xpath = "(//button[@class='consent-give'])[1]")
+    private WebElement acceptCookies;
+
+    @FindBy(xpath = "(//div[@class='ng-star-inserted'])[2]//child::span")
+    private WebElement dashboard;
+
 
     public WebElement getUsername() {
         return username;
@@ -31,5 +37,13 @@ public class LoginPage extends Parent {
 
     public WebElement getLoginButton() {
         return loginButton;
+    }
+
+    public WebElement getAcceptCookies() {
+        return acceptCookies;
+    }
+
+    public WebElement getDashboard() {
+        return dashboard;
     }
 }

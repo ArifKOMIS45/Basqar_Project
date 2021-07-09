@@ -5,17 +5,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.BaseDriver;
 
-public class DialogContent extends Parent{
+public class CountryPage extends Parent{
 
-    public DialogContent() {
+    public CountryPage() {
         PageFactory.initElements(BaseDriver.getDriver(),this);
     }
-
-    @FindBy(xpath = "(//button[@class='consent-give'])[1]")
-    private WebElement acceptCookies;
-
-    @FindBy(xpath = "(//div[@class='ng-star-inserted'])[2]//child::span")
-    private WebElement dashboard;
 
     @FindBy(xpath = "//ms-add-button[contains(@tooltip,'TITLE.ADD')]//button")
     private WebElement addButton;
@@ -45,10 +39,6 @@ public class DialogContent extends Parent{
     private WebElement deleteDialogBtn;
 
 
-    public WebElement getDashboard() {
-        return dashboard;
-    }
-
     public WebElement getAddButton() {
         return addButton;
     }
@@ -59,10 +49,6 @@ public class DialogContent extends Parent{
 
     public WebElement getCodeInput() {
         return codeInput;
-    }
-
-    public WebElement getAcceptCookies() {
-        return acceptCookies;
     }
 
     public WebElement getSaveButton() {

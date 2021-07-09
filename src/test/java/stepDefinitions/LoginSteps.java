@@ -4,19 +4,18 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.WebDriver;
-import pages.DialogContent;
+import pages.CountryPage;
 import pages.LoginPage;
 import utilities.BaseDriver;
 
 public class LoginSteps {
 
     LoginPage loginPage;
-    DialogContent dialogContent;
+    CountryPage countryPage;
 
-
-    public LoginSteps(LoginPage loginPage, DialogContent dialogContent) {
+    public LoginSteps(LoginPage loginPage, CountryPage countryPage) {
         this.loginPage = loginPage;
-        this.dialogContent = dialogContent;
+        this.countryPage = countryPage;
     }
 
     @Given("^Navigate to mersys$")
@@ -31,11 +30,11 @@ public class LoginSteps {
         loginPage.sendKeysFunction(loginPage.getUsername(),"richfield.edu");
         loginPage.sendKeysFunction(loginPage.getPassword(),"Richfield2020!");
         loginPage.clickFunction(loginPage.getLoginButton());
-        dialogContent.clickFunction(dialogContent.getAcceptCookies());
+        loginPage.clickFunction(loginPage.getAcceptCookies());
     }
 
     @Then("^User should login successfully$")
     public void userShouldLoginSuccessfully() {
-        dialogContent.veryContainsText(dialogContent.getDashboard(),"dashboard");
+        loginPage.veryContainsText(loginPage.getDashboard(),"dashboard");
     }
 }
