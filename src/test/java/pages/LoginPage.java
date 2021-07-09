@@ -20,4 +20,16 @@ public class LoginPage extends Parent {
     @FindBy(css = "button[aria-label='LOGIN']")
     private WebElement loginButton;
 
+
+    public WebElement getUsername() {
+        return username;
+    }
+
+    public WebElement getPassword() {
+        return password;
+    }
+
+    public WebElement getLoginButton() {
+        return loginButton;
+    }
 }
