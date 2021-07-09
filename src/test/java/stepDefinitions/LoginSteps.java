@@ -7,6 +7,9 @@ import org.openqa.selenium.WebDriver;
 import pages.CountryPage;
 import pages.LoginPage;
 import utilities.BaseDriver;
+import utilities.ExcelUtilities;
+
+import java.util.List;
 
 public class LoginSteps {
 
@@ -27,8 +30,11 @@ public class LoginSteps {
 
     @When("^Enter username and password and click login button$")
     public void enterUsernameAndPasswordAndClickLoginButton() {
-        loginPage.sendKeysFunction(loginPage.getUsername(),"richfield.edu");
-        loginPage.sendKeysFunction(loginPage.getPassword(),"Richfield2020!");
+        List<List<String>> list = ExcelUtilities.getListData("src/test/java/resources/LoginData.xlsx",
+                "Sayfa1",2);
+
+        loginPage.sendKeysFunction(loginPage.getUsername(),list.get(0).get(0));
+        loginPage.sendKeysFunction(loginPage.getPassword(),list.get(0).get(1));
         loginPage.clickFunction(loginPage.getLoginButton());
         loginPage.clickFunction(loginPage.getAcceptCookies());
     }
