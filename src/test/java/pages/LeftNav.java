@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.BaseDriver;
 
-public class LeftNav {
+public class LeftNav extends Parent{
 
     public LeftNav() {
         PageFactory.initElements(BaseDriver.getDriver(),this);
@@ -21,6 +21,7 @@ public class LeftNav {
     private WebElement country;
 
 
+
     public WebElement getSetupOne() {
         return setupOne;
     }
@@ -32,4 +33,6 @@ public class LeftNav {
     public WebElement getCountry() {
         return country;
     }
+
+
 }

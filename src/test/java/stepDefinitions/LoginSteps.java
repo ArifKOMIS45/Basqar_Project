@@ -31,7 +31,7 @@ public class LoginSteps {
     @When("^Enter username and password and click login button$")
     public void enterUsernameAndPasswordAndClickLoginButton() {
         List<List<String>> list = ExcelUtilities.getListData("src/test/java/resources/LoginData.xlsx",
-                "Sayfa1",2);
+                "Page1",2);
 
         loginPage.sendKeysFunction(loginPage.getUsername(),list.get(0).get(0));
         loginPage.sendKeysFunction(loginPage.getPassword(),list.get(0).get(1));
