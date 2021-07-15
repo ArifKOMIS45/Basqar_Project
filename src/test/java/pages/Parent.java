@@ -70,14 +70,10 @@ public class Parent {
     }
 
     public void findAndDelete(String deleteString,WebElement...element) {
-
         scrollToUpElement(element[0]);
         findElementAndSendKeys(element[1], deleteString);
         findElementAndClick(element[2]);
-
-
-        waitnumberOfElementsToBeLessThan(By.xpath("//ms-delete-button//button"), 5);
-
+        waitnumberOfElementsToBeLessThan(By.xpath("//ms-delete-button//button"), 2);
         findElementAndClick(element[3]);
         findElementAndClick(element[4]);
     }

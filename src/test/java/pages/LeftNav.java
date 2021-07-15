@@ -20,6 +20,14 @@ public class LeftNav extends Parent{
     @FindBy(xpath = "//span[text()='Countries']")
     private WebElement country;
 
+    @FindBy(xpath = "(//span[text()='Reports'])[4]")
+    private WebElement reports;
+
+    @FindBy(xpath = "(//span[text()='Setup'])[7]")
+    private WebElement reportsSetUp;
+
+    @FindBy(xpath = "//span[text()='Excel Template']")
+    private WebElement reportsExcelTemplate;
 
 
     public WebElement getSetupOne() {
@@ -34,5 +42,15 @@ public class LeftNav extends Parent{
         return country;
     }
 
+    public WebElement getReports() {
+        return reports;
+    }
 
+    public WebElement getReportsSetUp() {
+        return reportsSetUp;
+    }
+
+    public WebElement getReportsExcelTemplate() {
+        return reportsExcelTemplate;
+    }
 }
