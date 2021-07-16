@@ -91,4 +91,9 @@ public class Parent {
             }
         }
     }
+
+    public void waitnumberOfElementsToBeMoreThan(By selector, int number) {
+        WebDriverWait wait = new WebDriverWait(BaseDriver.getDriver(), 20);
+        wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(selector, number));
+    }
 }

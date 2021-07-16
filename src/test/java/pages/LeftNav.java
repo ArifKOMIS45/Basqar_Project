@@ -29,6 +29,33 @@ public class LeftNav extends Parent{
     @FindBy(xpath = "//span[text()='Excel Template']")
     private WebElement reportsExcelTemplate;
 
+    @FindBy(xpath = "//span[text()='Education']")
+    private WebElement educationButton;
+
+    @FindBy(xpath = "(//span[text()='Setup'])[5]")
+    private WebElement educationSetupButton;
+
+    @FindBy(xpath = "//span[.='Subject Categories']")
+    private WebElement subjectCatogoriesButton;
+
+    @FindBy(xpath = "//span[.='Subjects']")
+    private WebElement educationSubjectButton;
+
+    public WebElement getEducationButton() {
+        return educationButton;
+    }
+
+    public WebElement getEducationSetupButton() {
+        return educationSetupButton;
+    }
+
+    public WebElement getSubjectCatogoriesButton() {
+        return subjectCatogoriesButton;
+    }
+
+    public WebElement getEducationSubjectButton() {
+        return educationSubjectButton;
+    }
 
     public WebElement getSetupOne() {
         return setupOne;
@@ -53,4 +80,5 @@ public class LeftNav extends Parent{
     public WebElement getReportsExcelTemplate() {
         return reportsExcelTemplate;
     }
+
 }
