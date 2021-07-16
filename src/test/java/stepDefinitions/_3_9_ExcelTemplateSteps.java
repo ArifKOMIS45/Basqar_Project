@@ -19,7 +19,6 @@ public class _3_9_ExcelTemplateSteps extends Parent {
         this.et = et;
     }
 
-
     @And("^Click on Reports$")
     public void clickOnReports() {
         ln.clickFunction(ln.getReports());
